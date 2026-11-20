@@ -1,0 +1,263 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/* CONFIGURACIÓN GLOBAL */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #173b29;
+  background: #f1f7ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --focus-dark: #173b29;
+  --focus-green: #28643c;
+  --focus-medium: #57934c;
+  --focus-light: #b9e88a;
+  --focus-lime: #c7f36b;
+  --focus-background: #f1f7ef;
+  --focus-white: #ffffff;
+  --focus-muted: #829087;
+  --focus-border: #e1ecdf;
+
+  --focus-shadow:
+    0 10px 30px rgba(24, 68, 42, 0.07);
+
+  --focus-shadow-hover:
+    0 16px 38px rgba(24, 68, 42, 0.12);
+
+  --focus-radius: 20px;
+}
+
+/* DOCUMENTO */
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  scrollbar-color: #a8d58c #edf5e9;
+  scrollbar-width: thin;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(
+      circle at 8% 10%,
+      rgba(190, 235, 157, 0.16),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 92% 85%,
+      rgba(151, 215, 129, 0.12),
+      transparent 30%
+    ),
+    var(--focus-background);
+}
+
+/* TIPOGRAFÍA */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Manrope', sans-serif;
+  color: var(--focus-dark);
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* ELEMENTOS DE FORMULARIO */
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+input,
+textarea,
+select {
+  color: var(--focus-dark);
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+a:focus-visible {
+  outline: 3px solid rgba(130, 185, 75, 0.55);
+  outline-offset: 3px;
+}
+
+/* IMÁGENES Y ENLACES */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* CONTENEDOR PRINCIPAL */
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* SELECCIÓN DE TEXTO */
+
+::selection {
+  background: #c7f36b;
+  color: #173b29;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #edf5e9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b4d69e;
+  border: 2px solid #edf5e9;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #82b96b;
+}
+
+/* PANTALLA DE CARGA */
+
+.app-loading {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(185, 242, 124, 0.25),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(111, 184, 94, 0.18),
+      transparent 30%
+    ),
+    #f0f8f1;
+  color: #14532d;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.loading-logo {
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #c7f36b, #8dca3d);
+  border-radius: 19px;
+  font-size: 32px;
+  box-shadow: 0 9px 25px rgba(120, 175, 55, 0.25);
+  animation: loadingFloat 2s ease-in-out infinite;
+}
+
+.app-loading p {
+  color: #718276;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@keyframes loadingFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+/* ANIMACIONES GENERALES */
+
+@keyframes focusFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TABLETS */
+
+@media (max-width: 850px) {
+  :root {
+    --focus-radius: 17px;
+  }
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+  body {
+    background: #f3f8f1;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+}
+
+/* ACCESIBILIDAD */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

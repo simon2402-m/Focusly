@@ -1,0 +1,409 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.register-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 16px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(134, 201, 154, 0.25), transparent 30%),
+    radial-gradient(circle at 85% 80%, rgba(184, 242, 139, 0.16), transparent 30%),
+    linear-gradient(135deg, #102c24, #174c37 55%, #0d382b);
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* DECORACIÓN DEL FONDO */
+
+.register-page::before,
+.register-page::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(2px);
+}
+
+.register-page::before {
+  width: 300px;
+  height: 300px;
+  top: -120px;
+  right: -80px;
+  background: rgba(184, 242, 139, 0.10);
+}
+
+.register-page::after {
+  width: 250px;
+  height: 250px;
+  bottom: -100px;
+  left: -70px;
+  background: rgba(134, 201, 154, 0.12);
+}
+
+/* TARJETA */
+
+.register-card {
+  width: 100%;
+  max-width: 460px;
+  padding: 42px;
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.25),
+    0 5px 20px rgba(0, 0, 0, 0.08);
+  animation: cardAppear 0.6s ease;
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* LOGO */
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  margin-bottom: 30px;
+}
+
+.brand h1 {
+  color: #153e2c;
+  font-family: 'Manrope', sans-serif;
+  font-size: 35px;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+}
+
+.brand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #b8f28b, #65c77e);
+  color: #174c37;
+  font-size: 27px;
+  box-shadow: 0 5px 15px rgba(101, 199, 126, 0.25);
+}
+
+/* TITULOS */
+
+.register-card h2 {
+  color: #153e2c;
+  text-align: center;
+  font-family: 'Manrope', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+  margin-bottom: 11px;
+}
+
+.subtitle {
+  color: #788a7e;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* FORMULARIO */
+
+.register-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.register-card label {
+  color: #294b37;
+  font-weight: 700;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.register-card input:not([type="checkbox"]) {
+  width: 100%;
+  padding: 15px 16px;
+  border: 1.5px solid #e1ebe3;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 14px;
+  color: #183c2a;
+  outline: none;
+  background: #f8fbf8;
+  transition: all 0.25s ease;
+}
+
+.register-card input:not([type="checkbox"]):hover {
+  border-color: #b7d8be;
+}
+
+.register-card input:not([type="checkbox"]):focus {
+  border-color: #29985a;
+  box-shadow: 0 0 0 4px rgba(41, 152, 90, 0.11);
+  background: #ffffff;
+}
+
+.register-card input::placeholder {
+  color: #a4b2a8;
+}
+
+/* TERMINOS */
+
+.terms {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 10px 0;
+  font-weight: 500 !important;
+  color: #708176 !important;
+  font-size: 12px !important;
+}
+
+.terms input {
+  accent-color: #16834a;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* BOTON PRINCIPAL */
+
+.register-card form button {
+  border: none;
+  padding: 16px;
+  margin-top: 5px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #239957, #145c37);
+  color: white;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 7px 18px rgba(20, 92, 55, 0.18);
+}
+
+.register-card form button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2cac65, #176b40);
+  transform: translateY(-2px);
+  box-shadow: 0 11px 23px rgba(20, 92, 55, 0.25);
+}
+
+.register-card form button:active {
+  transform: scale(0.98);
+}
+
+.register-card form button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+/* INICIAR SESIÓN */
+
+.login-text {
+  text-align: center;
+  color: #788a7e;
+  font-size: 13px;
+  margin-top: 27px;
+}
+
+.login-text button {
+  color: #16834a;
+  font-family: inherit;
+  font-weight: 800;
+  text-decoration: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-left: 5px;
+  font-size: 13px;
+  transition: color 0.2s;
+}
+
+.login-text button:hover {
+  color: #0e5630;
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 480px) {
+  .register-card {
+    padding: 32px 23px;
+    border-radius: 22px;
+  }
+
+  .register-card h2 {
+    font-size: 23px;
+  }
+
+  .brand h1 {
+    font-size: 31px;
+  }
+}
+
+
+/* ===== MEJORAS RESPONSIVE Y ACCESIBILIDAD ===== */
+
+.register-page {
+  width: 100%;
+  min-width: 320px;
+}
+
+.register-card {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.register-card input:not([type="checkbox"]) {
+  min-height: 48px;
+}
+
+.register-card form button {
+  min-height: 49px;
+}
+
+.register-card form button:focus-visible,
+.login-text button:focus-visible {
+  outline: 3px solid #29985a;
+  outline-offset: 4px;
+}
+
+.terms {
+  align-items: flex-start;
+  line-height: 1.5;
+}
+
+.terms input {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* TABLETS */
+
+@media (max-width: 768px) {
+  .register-page {
+    padding: 28px 18px;
+  }
+
+  .register-card {
+    max-width: 440px;
+  }
+}
+
+/* CELULARES */
+
+@media (max-width: 480px) {
+  .register-page {
+    padding: 20px 14px;
+  }
+
+  .register-card {
+    padding: 28px 21px;
+    border-radius: 21px;
+  }
+
+  .brand {
+    margin-bottom: 24px;
+  }
+
+  .brand h1 {
+    font-size: 29px;
+  }
+
+  .register-card h2 {
+    font-size: 22px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+
+  .register-card label {
+    font-size: 13px;
+  }
+
+  .register-card input:not([type="checkbox"]) {
+    font-size: 16px;
+    padding: 14px;
+  }
+
+  .terms {
+    font-size: 12px !important;
+  }
+
+  .register-card form button {
+    font-size: 14px;
+  }
+
+  .login-text {
+    line-height: 1.6;
+    margin-top: 22px;
+  }
+}
+
+/* CELULARES PEQUEÑOS */
+
+@media (max-width: 350px) {
+  .register-card {
+    padding: 24px 16px;
+  }
+
+  .brand h1 {
+    font-size: 26px;
+  }
+
+  .register-card h2 {
+    font-size: 20px;
+  }
+}
+
+/* PANTALLAS CON POCA ALTURA */
+
+@media (max-height: 700px) {
+  .register-page {
+    align-items: flex-start;
+  }
+
+  .register-card {
+    margin: 10px auto;
+  }
+}
+
+/* RESPETAR PREFERENCIAS DE MOVIMIENTO */
+
+@media (prefers-reduced-motion: reduce) {
+  .register-card {
+    animation: none;
+  }
+
+  .register-card input,
+  .register-card form button,
+  .login-text button {
+    transition: none;
+  }
+}
